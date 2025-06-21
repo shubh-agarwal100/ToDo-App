@@ -1,10 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+<<<<<<< HEAD
 var app = express();
+=======
+const app = express();
+
+>>>>>>> 1111ebcba5e3ee67e05a3774f8427b534ef516c0
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+<<<<<<< HEAD
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/todo");
 
@@ -71,4 +77,22 @@ app.post("/delete", async function(req, res) {
 
 app.listen(3000, () => {
   console.log("Server running");
+=======
+var items = [];
+
+let example = "working";
+
+app.get("/", function(req, res) {
+  res.render("list", { ejes: items });
+});
+
+app.post("/", function(req, res) {
+  var item = req.body.ele1;
+  items.push(item);
+  res.redirect("/");
+});
+
+app.listen(4000, function() {
+  console.log("Server started");
+>>>>>>> 1111ebcba5e3ee67e05a3774f8427b534ef516c0
 });
