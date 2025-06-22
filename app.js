@@ -8,7 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/todo");
+mongoose.connect("mongodb+srv://agarwalshubh055:5mCk56TZj5EAp9yX@todo-app-shubh.z4vg2h6.mongodb.net/?retryWrites=true&w=majority&appName=ToDo-app-shubh");
+
+const User = require('./models/userModels.js');
+
 
 const trySchema = new mongoose.Schema({
   name: String
